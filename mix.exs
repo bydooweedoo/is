@@ -32,6 +32,7 @@ defmodule Is.MixProject do
     [
       name: "is",
       licenses: ["MIT"],
+      maintainers: ["Rémi Marek"],
       links: %{"GitHub" => "https://github.com/bydooweedoo/is"},
       source_url: "https://github.com/bydooweedoo/is",
     ]
