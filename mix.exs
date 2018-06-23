@@ -1,4 +1,5 @@
 defmodule Is.MixProject do
+  @moduledoc false
   use Mix.Project
 
   def project do
@@ -6,6 +7,7 @@ defmodule Is.MixProject do
       app: :is,
       version: "1.0.0",
       elixir: "~> 1.6",
+      description: "Fast, extensible and easy to use data structure validation with nested structures support.",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -17,10 +19,21 @@ defmodule Is.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test,
       ],
+      package: package(),
+      source_url: "https://github.com/bydooweedoo/is",
       docs: [
         main: "Is",
         groups_for_modules: groups_for_modules(),
       ],
+    ]
+  end
+
+  def package() do
+    [
+      name: "is",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/bydooweedoo/is"},
+      source_url: "https://github.com/bydooweedoo/is",
     ]
   end
 
@@ -70,7 +83,7 @@ defmodule Is.MixProject do
       {:benchee_html, "~> 0.5", only: :dev},
       {:credo, "~> 0.9", only: :dev},
       {:dialyxir, "~> 0.5", only: :dev},
-      {:ex_doc, "~> 0.18", only: :docs},
+      {:ex_doc, "~> 0.18", only: :dev},
       {:excoveralls, "~> 0.8", only: :test},
       {:remix, "~> 0.0.2", only: :dev},
     ]
